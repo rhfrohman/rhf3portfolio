@@ -76,7 +76,7 @@ dependencies {
     implementation(libs.androidx.compose.runtime)
     implementation(libs.androidx.activity.compose)
 
-    debugImplementation(libs.androidx.compose.ui.tooling)
+    implementation(libs.androidx.compose.ui.tooling)
 
     screenshotTestImplementation(libs.androidx.compose.ui.tooling)
 }

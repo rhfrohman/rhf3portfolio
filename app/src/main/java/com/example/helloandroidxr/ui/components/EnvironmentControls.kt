@@ -23,6 +23,7 @@ import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Icon
@@ -42,7 +43,6 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.lifecycleScope
 import androidx.xr.compose.platform.LocalSession
 import androidx.xr.compose.platform.LocalSpatialCapabilities
-import androidx.xr.scenecore.Session
 import com.example.helloandroidxr.R
 import com.example.helloandroidxr.environment.EnvironmentController
 import com.example.helloandroidxr.ui.theme.HelloAndroidXRTheme
@@ -54,10 +54,10 @@ import com.example.helloandroidxr.ui.theme.HelloAndroidXRTheme
 fun EnvironmentControls(modifier: Modifier = Modifier) {
     // If we aren't able to access the session, these buttons wouldn't work and shouldn't be shown
     val activity = LocalActivity.current
-    if (LocalSession.current != null && activity is ComponentActivity) {
+    val session = LocalSession.current
+    if (session != null && activity is ComponentActivity) {
         val uiIsSpatialized = LocalSpatialCapabilities.current.isSpatialUiEnabled
         val environmentController = remember(activity) {
-            val session = Session.create(activity)
             EnvironmentController(session, activity.lifecycleScope)
         }
         //load the model early so it's in memory for when we need it
@@ -97,6 +97,7 @@ private fun SetVirtualEnvironmentButton(
         modifier = modifier
             .padding(16.dp)
             .background(MaterialTheme.colorScheme.onSecondary, CircleShape)
+            .size(56.dp)
     ) {
         Icon(
             painter = painterResource(R.drawable.environment_24px),
@@ -114,6 +115,7 @@ private fun SetPassthroughButton(
         modifier = modifier
             .padding(top = 16.dp, bottom = 16.dp, end = 16.dp)
             .background(MaterialTheme.colorScheme.onSecondary, CircleShape)
+            .size(56.dp)
     ) {
         Icon(
             painter = painterResource(R.drawable.passthrough_24px),
@@ -129,6 +131,7 @@ private fun RequestHomeSpaceButton(onclick: () -> Unit) {
         modifier = Modifier
             .padding(16.dp)
             .background(MaterialTheme.colorScheme.onSecondary, CircleShape)
+            .size(56.dp)
     ) {
         Icon(
             painter = painterResource(id = R.drawable.ic_request_home_space),

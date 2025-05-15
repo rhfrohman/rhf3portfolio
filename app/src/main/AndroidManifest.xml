@@ -17,9 +17,8 @@
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
-<!--    This is necessary due to a known issue causing a higher minSDK than intended-->
-    <uses-sdk tools:overrideLibrary="androidx.xr.scenecore, androidx.xr.compose"/>
+    
+    <uses-feature android:name="android.software.xr.api.spatial" android:required="false" />
 
     <application
         android:allowBackup="true"

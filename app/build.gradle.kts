@@ -27,7 +27,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.helloandroidxr"
-        minSdk = 23
+        minSdk = 24
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -63,7 +63,6 @@ android {
 dependencies {
     val composeBom = platform(libs.androidx.compose.bom)
     implementation(composeBom)
-    implementation(libs.impress)
     implementation(libs.androidx.arcore)
     implementation(libs.androidx.scenecore)
     implementation(libs.androidx.compose)

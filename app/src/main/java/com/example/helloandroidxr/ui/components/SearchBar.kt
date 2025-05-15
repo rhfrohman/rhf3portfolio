@@ -18,9 +18,8 @@ package com.example.helloandroidxr.ui.components
 
 import android.content.Context
 import android.widget.Toast
-import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.text.KeyboardActions
@@ -47,7 +46,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.xr.compose.platform.LocalSpatialCapabilities
 import com.example.helloandroidxr.R
 import com.example.helloandroidxr.ui.theme.HelloAndroidXRTheme
 
@@ -56,13 +54,8 @@ import com.example.helloandroidxr.ui.theme.HelloAndroidXRTheme
  */
 @Composable
 fun SearchBar(modifier: Modifier = Modifier) {
-    val uiIsSpatialized = LocalSpatialCapabilities.current.isSpatialUiEnabled
     val context = LocalContext.current
-
     Surface(modifier = modifier.clip(CircleShape)) {
-        if (uiIsSpatialized) {
-            Spacer(Modifier.width(208.dp))
-        }
         SearchTextBox(
             onSearch = { query ->
                 showNotImplementedToast(
@@ -70,16 +63,8 @@ fun SearchBar(modifier: Modifier = Modifier) {
                     context = context
                 )
             },
-            modifier = if (uiIsSpatialized) {
-                Modifier.padding(
-                    horizontal = 208.dp,
-                    vertical = 16.dp,
-                )
-            } else Modifier
+            modifier = Modifier.padding(16.dp),
         )
-        if (uiIsSpatialized) {
-            Spacer(Modifier.width(208.dp))
-        }
     }
 }
 
@@ -95,7 +80,11 @@ fun SearchTextBox(
     TextField(
         value = text,
         onValueChange = { text = it },
-        placeholder = { Text(stringResource(R.string.search_product_name)) },
+        placeholder = {
+            Text(
+                stringResource(R.string.search_product_name),
+            )
+        },
         leadingIcon = { Icon(Icons.Filled.Search, null) },
         colors = TextFieldDefaults.colors(
             focusedIndicatorColor = Color.Transparent,
@@ -112,7 +101,8 @@ fun SearchTextBox(
             focusManager.clearFocus(force = true)
         }),
         modifier = modifier
-            .size(640.dp, 64.dp)
+            .width(640.dp)
+            .height(56.dp)
             .clip(CircleShape)
     )
 }

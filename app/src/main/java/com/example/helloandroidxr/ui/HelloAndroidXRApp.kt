@@ -58,7 +58,8 @@ import androidx.xr.compose.subspace.SpatialPanel
 import androidx.xr.compose.subspace.SpatialRow
 import androidx.xr.compose.subspace.layout.SubspaceModifier
 import androidx.xr.compose.subspace.layout.alpha
-import androidx.xr.compose.subspace.layout.fillMaxHeight
+import androidx.xr.compose.subspace.layout.fillMaxSize
+import androidx.xr.compose.subspace.layout.fillMaxWidth
 import androidx.xr.compose.subspace.layout.height
 import androidx.xr.compose.subspace.layout.padding
 import androidx.xr.compose.subspace.layout.size
@@ -107,15 +108,15 @@ private fun SpatialLayout(
         }
     }
     Subspace {
-        SpatialRow(modifier = SubspaceModifier.height(816.dp)) {
-            SpatialColumn {
+        SpatialRow(modifier = SubspaceModifier.height(816.dp).fillMaxWidth()) {
+            SpatialColumn(modifier = SubspaceModifier.width(400.dp)) {
                 SpatialPanel(
                     SubspaceModifier.alpha(animatedAlpha.value).size(400.dp).padding(bottom = 16.dp)
                 ) {
                     firstSupportingContent()
                 }
                 SpatialPanel(
-                    SubspaceModifier.alpha(animatedAlpha.value).width(400.dp).weight(1f)
+                    SubspaceModifier.alpha(animatedAlpha.value).weight(1f)
                 ) {
                     secondSupportingContent()
                 }
@@ -123,8 +124,7 @@ private fun SpatialLayout(
             SpatialPanel(
                 modifier = SubspaceModifier
                     .alpha(animatedAlpha.value)
-                    .width(1488.dp)
-                    .fillMaxHeight()
+                    .fillMaxSize()
                     .padding(left = 16.dp)
             ) {
                 Column {

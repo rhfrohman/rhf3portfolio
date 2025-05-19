@@ -16,9 +16,10 @@ In the sample you can see an implementation of:
 
 # 💻 Development Environment
 
-**Hello Android XR** uses the Gradle build system and can be imported directly into Android Studio
-(make sure you are using the latest stable version available
-[here](https://developer.android.com/studio)).
+**Hello Android XR** uses the Gradle build system and can be imported directly into Android Studio.
+Ensure you have the latest Canary version available, and update the XR emulator image in Android
+Studio's SDK Manager before creating a new XR Emulator. The Canary version of Android Studio is
+available [here](https://developer.android.com/studio/preview)).
 
 # Additional Resources
 

@@ -25,5 +25,6 @@
     <string name="search_product_name">Search Product Name</string>
     <string name="set_virtual_environment">set virtual environment</string>
     <string name="set_passthrough">set passthrough</string>
+    <string name="show_bugdroid">Show bugdroid</string>
 
 </resources>

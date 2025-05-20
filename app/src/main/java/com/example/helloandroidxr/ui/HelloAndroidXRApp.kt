@@ -20,11 +20,13 @@ import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -34,11 +36,18 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Button
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.material3.adaptive.currentWindowAdaptiveInfo
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
@@ -61,10 +70,13 @@ import androidx.xr.compose.subspace.layout.alpha
 import androidx.xr.compose.subspace.layout.fillMaxSize
 import androidx.xr.compose.subspace.layout.fillMaxWidth
 import androidx.xr.compose.subspace.layout.height
+import androidx.xr.compose.subspace.layout.movable
 import androidx.xr.compose.subspace.layout.padding
+import androidx.xr.compose.subspace.layout.resizable
 import androidx.xr.compose.subspace.layout.size
 import androidx.xr.compose.subspace.layout.width
 import com.example.helloandroidxr.R
+import com.example.helloandroidxr.ui.components.BugdroidModel
 import com.example.helloandroidxr.ui.components.EnvironmentControls
 import com.example.helloandroidxr.ui.components.SearchBar
 import com.example.helloandroidxr.ui.theme.HelloAndroidXRTheme
@@ -111,12 +123,21 @@ private fun SpatialLayout(
         SpatialRow(modifier = SubspaceModifier.height(816.dp).fillMaxWidth()) {
             SpatialColumn(modifier = SubspaceModifier.width(400.dp)) {
                 SpatialPanel(
-                    SubspaceModifier.alpha(animatedAlpha.value).size(400.dp).padding(bottom = 16.dp)
+                    SubspaceModifier
+                        .alpha(animatedAlpha.value)
+                        .size(400.dp)
+                        .padding(bottom = 16.dp)
+                        .movable()
+                        .resizable()
                 ) {
                     firstSupportingContent()
                 }
                 SpatialPanel(
-                    SubspaceModifier.alpha(animatedAlpha.value).weight(1f)
+                    SubspaceModifier
+                        .alpha(animatedAlpha.value)
+                        .weight(1f)
+                        .movable()
+                        .resizable()
                 ) {
                     secondSupportingContent()
                 }
@@ -126,12 +147,12 @@ private fun SpatialLayout(
                     .alpha(animatedAlpha.value)
                     .fillMaxSize()
                     .padding(left = 16.dp)
+                    .movable()
+                    .resizable()
             ) {
                 Column {
                     TopAppBar()
-                    Row {
-                        primaryContent()
-                    }
+                    primaryContent()
                 }
             }
         }
@@ -193,8 +214,7 @@ private fun SideBySidePaneLayout(
             }
         }
         Spacer(Modifier.width(16.dp))
-        Surface(modifier.clip(RoundedCornerShape(16.dp))
-        ) {
+        Surface(modifier.clip(RoundedCornerShape(16.dp))) {
             primaryPane()
         }
     }
@@ -210,7 +230,7 @@ private fun TopAndBottomPaneLayout(
     modifier: Modifier = Modifier
 ) {
     Column(modifier.verticalScroll(rememberScrollState())) {
-        Surface(Modifier.requiredHeight(500.dp)){
+        Surface(Modifier.requiredHeight(500.dp)) {
             primaryPane()
         }
         Spacer(Modifier.height(16.dp))
@@ -259,11 +279,31 @@ private fun TopAppBar() {
 
 @Composable
 private fun PrimaryContent(modifier: Modifier = Modifier) {
-    TextPane(
-        text = stringResource(R.string.primary_content),
-        modifier = modifier
-            .clip(RoundedCornerShape(16.dp))
-    )
+    var showBugdroid by rememberSaveable { mutableStateOf(false) }
+
+    if (LocalSpatialCapabilities.current.isSpatialUiEnabled) {
+        Surface(modifier.fillMaxSize()) {
+            Box(modifier.padding(48.dp), contentAlignment = Alignment.Center) {
+                Button(
+                    onClick = {
+                        showBugdroid = true
+                    },
+                    modifier = modifier
+                ) {
+                    Text(
+                        text = stringResource(id = R.string.show_bugdroid),
+                        style = MaterialTheme.typography.labelLarge
+                    )
+                }
+                BugdroidModel(showBugdroid = showBugdroid)
+            }
+        }
+    } else {
+        TextPane(
+            text = stringResource(R.string.primary_content),
+            modifier = modifier.clip(RoundedCornerShape(16.dp))
+        )
+    }
 }
 
 @Composable

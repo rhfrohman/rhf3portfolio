@@ -17,7 +17,8 @@
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    
+    <!-- Indicates that the app makes use of XR spatial APIs, but this isn't a requirement that
+    should block installing the app -->
     <uses-feature android:name="android.software.xr.api.spatial" android:required="false" />
 
     <application

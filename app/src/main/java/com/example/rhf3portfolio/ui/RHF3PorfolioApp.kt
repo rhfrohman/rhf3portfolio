@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 
-package com.example.helloandroidxr.ui
+package com.example.rhf3portfolio.ui
 
+import android.net.Uri
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.tween
@@ -75,15 +76,17 @@ import androidx.xr.compose.subspace.layout.padding
 import androidx.xr.compose.subspace.layout.resizable
 import androidx.xr.compose.subspace.layout.size
 import androidx.xr.compose.subspace.layout.width
-import com.example.helloandroidxr.R
-import com.example.helloandroidxr.ui.components.BugdroidModel
-import com.example.helloandroidxr.ui.components.EnvironmentControls
-import com.example.helloandroidxr.ui.components.SearchBar
-import com.example.helloandroidxr.ui.theme.HelloAndroidXRTheme
+import com.example.rhf3portfolio.R
+import com.example.rhf3portfolio.ui.components.BugdroidModel
+import com.example.rhf3portfolio.ui.components.EnvironmentControls
+import com.example.rhf3portfolio.ui.components.SearchBar
+import com.example.rhf3portfolio.ui.theme.Rhf3PortfolioTheme
+import com.example.rhf3portfolio.CarouselItem
+import com.example.rhf3portfolio.ui.components.ImageVideoCarousel
 import kotlinx.coroutines.launch
 
 @Composable
-fun HelloAndroidXRApp() {
+fun Rhf3PortfolioApp() {
     if (LocalSpatialCapabilities.current.isSpatialUiEnabled) {
         SpatialLayout(
             primaryContent = { PrimaryContent() },
@@ -311,16 +314,35 @@ private fun BlockOfContentOne(modifier: Modifier = Modifier) {
     TextPane(stringResource(R.string.block_of_content_1), modifier = modifier.height(240.dp))
 }
 
+
+// ... other imports
+// Import com.example.helloandroidxr.ui.components.ImageVideoCarousel, com.example.helloandroidxr.CarouselItem, and your com.example.helloandroidxr.carouselItems list
+
 @Composable
 private fun BlockOfContentTwo(modifier: Modifier = Modifier) {
-    TextPane(stringResource(R.string.block_of_content_2), modifier = modifier.fillMaxHeight())
+    // You can define com.example.helloandroidxr.carouselItems here or pass it from a ViewModel/higher composable
+    val items = remember { // Remember the list to avoid recreation on recomposition
+        listOf(
+            CarouselItem.Image("https://picsum.photos/seed/page1/600/400"),
+            // Make sure your package name is correct and the video file exists in res/raw
+            CarouselItem.Video(Uri.parse("android.resource://com.example.rhf3portfolio/" + R.raw.herm)),
+            CarouselItem.Image("https://picsum.photos/seed/page2/600/400"),
+            CarouselItem.Image("https://picsum.photos/seed/page3/600/400")
+        )
+    }
+
+    // Apply the original modifier if needed, or adjust as necessary for the carousel
+    ImageVideoCarousel(
+        items = items,
+        modifier = modifier.fillMaxHeight() // Keep original constraint or adjust
+    )
 }
 
 @Composable
 @Preview(device = "spec:width=1920dp,height=1080dp,dpi=160")
 @Preview(device = "spec:width=411dp,height=891dp")
 fun AppLayoutPreview() {
-    HelloAndroidXRTheme {
-        HelloAndroidXRApp()
+    Rhf3PortfolioTheme {
+        Rhf3PortfolioApp()
     }
 }

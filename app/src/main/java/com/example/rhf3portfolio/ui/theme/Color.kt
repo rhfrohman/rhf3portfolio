@@ -14,24 +14,16 @@
  * limitations under the License.
  */
 
-package com.example.helloandroidxr
+package com.example.rhf3portfolio.ui.theme
 
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import com.example.helloandroidxr.ui.HelloAndroidXRApp
-import com.example.helloandroidxr.ui.theme.HelloAndroidXRTheme
+import androidx.compose.ui.graphics.Color
+val PaneBackground = Color(0xFFF5E8C8)
+val AppContainerBackground = Color(0xFFF3D1A0)
 
-class MainActivity : ComponentActivity() {
+val Purple80 = Color(0xFFD0BCFF)
+val PurpleGrey80 = Color(0xFFCCC2DC)
+val Pink80 = Color(0xFFEFB8C8)
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            HelloAndroidXRTheme {
-                HelloAndroidXRApp()
-            }
-        }
-    }
-}
+val Purple40 = Color(0xFF6650a4)
+val PurpleGrey40 = Color(0xFF625b71)
+val Pink40 = Color(0xFF7D5260)

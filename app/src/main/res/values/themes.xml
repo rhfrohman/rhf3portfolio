@@ -16,5 +16,5 @@
   -->
 
 <resources>
-    <style name="Theme.HelloAndroidXR" parent="Theme.AppCompat.DayNight"/>
+    <style name="Theme.Rhf3Portfolio" parent="Theme.AppCompat.DayNight"/>
 </resources>

@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-package com.example.helloandroidxr.ui
+package com.example.rhf3portfolio.ui
 
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.helloandroidxr.ui.theme.HelloAndroidXRTheme
-import com.example.helloandroidxr.ui.components.SearchTextBox
+import com.example.rhf3portfolio.ui.theme.Rhf3PortfolioTheme
+import com.example.rhf3portfolio.ui.components.SearchTextBox
 
 class AppPreviewScreenshots {
 
@@ -28,8 +27,8 @@ class AppPreviewScreenshots {
     @Preview(device = "spec:width=1920dp,height=1080dp,dpi=160")
     @Preview(device = "spec:width=411dp,height=891dp")
     fun AppLayoutPreview() {
-        HelloAndroidXRTheme {
-            HelloAndroidXRApp()
+        Rhf3PortfolioTheme {
+            Rhf3PortfolioApp()
         }
     }
 
@@ -37,7 +36,7 @@ class AppPreviewScreenshots {
     @Preview(device = "spec:width=1920dp,height=1080dp,dpi=160")
     @Preview(device = "spec:width=411dp,height=891dp")
     fun SearchTextBoxPreview() {
-        HelloAndroidXRTheme {
+        Rhf3PortfolioTheme {
             SearchTextBox(onSearch = {})
         }
     }

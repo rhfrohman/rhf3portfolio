@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.helloandroidxr.ui
+package com.example.rhf3portfolio.ui
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -24,19 +24,23 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.helloandroidxr.ui.theme.HelloAndroidXRTheme
+import com.example.rhf3portfolio.ui.theme.Rhf3PortfolioTheme
+import androidx.compose.material3.MaterialTheme
+
 
 @Composable
 fun TextPane(text: String, modifier: Modifier = Modifier) {
     Surface(modifier = modifier.fillMaxSize()) {
-        Text(text = text, modifier = Modifier.padding(16.dp))
+        Text(text = text, modifier = Modifier.padding(16.dp), style = MaterialTheme.typography.bodyLarge)
     }
 }
 
 @Composable
 @Preview
 private fun MyLayOutPreview() {
-    HelloAndroidXRTheme {
+    Rhf3PortfolioTheme {
         TextPane(modifier = Modifier, text = "Primary")
+        // In your UI
+        Text("Test Merriweather and this is some more text", style = MaterialTheme.typography.bodyLarge)
     }
 }

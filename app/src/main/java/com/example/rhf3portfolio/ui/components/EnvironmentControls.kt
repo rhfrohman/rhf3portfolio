@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.helloandroidxr.ui.components
+package com.example.rhf3portfolio.ui.components
 
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.LocalActivity
@@ -43,9 +43,9 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.lifecycleScope
 import androidx.xr.compose.platform.LocalSession
 import androidx.xr.compose.platform.LocalSpatialCapabilities
-import com.example.helloandroidxr.R
-import com.example.helloandroidxr.environment.EnvironmentController
-import com.example.helloandroidxr.ui.theme.HelloAndroidXRTheme
+import com.example.rhf3portfolio.R
+import com.example.rhf3portfolio.environment.EnvironmentController
+import com.example.rhf3portfolio.ui.theme.Rhf3PortfolioTheme
 
 /**
  * Controls for changing the user's Environment, and toggling between Home Space and Full Space
@@ -61,7 +61,7 @@ fun EnvironmentControls(modifier: Modifier = Modifier) {
             EnvironmentController(session, activity.lifecycleScope)
         }
         //load the model early so it's in memory for when we need it
-        val environmentModelName = "green_hills_ktx2_mipmap.glb"
+        val environmentModelName = "xr-background-herm.glb"
         environmentController.loadModelAsset(environmentModelName)
 
         Surface(modifier.clip(CircleShape)) {
@@ -155,7 +155,7 @@ private fun RequestFullSpaceButton(onclick: () -> Unit) {
 @Preview
 @Composable
 private fun PreviewSetVirtualEnvironmentButton() {
-    HelloAndroidXRTheme {
+    Rhf3PortfolioTheme {
         SetVirtualEnvironmentButton {}
     }
 }
@@ -163,7 +163,7 @@ private fun PreviewSetVirtualEnvironmentButton() {
 @Preview
 @Composable
 private fun PreviewRequestHomeSpaceButton() {
-    HelloAndroidXRTheme {
+    Rhf3PortfolioTheme {
         RequestHomeSpaceButton {}
     }
 }
@@ -171,7 +171,7 @@ private fun PreviewRequestHomeSpaceButton() {
 @Preview
 @Composable
 private fun PreviewRequestFullSpaceButton() {
-    HelloAndroidXRTheme {
+    Rhf3PortfolioTheme {
         RequestFullSpaceButton {}
     }
 }
@@ -179,7 +179,7 @@ private fun PreviewRequestFullSpaceButton() {
 @Preview
 @Composable
 private fun PreviewSetPassthroughButton() {
-    HelloAndroidXRTheme {
+    Rhf3PortfolioTheme {
         SetPassthroughButton {}
     }
 }

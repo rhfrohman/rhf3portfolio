@@ -22,11 +22,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.helloandroidxr"
+    namespace = "com.example.rhf3portfolio"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.helloandroidxr"
+        applicationId = "com.example.rhf3portfolio"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
@@ -67,8 +67,14 @@ dependencies {
     implementation(libs.androidx.scenecore)
     implementation(libs.androidx.compose)
     implementation(libs.kotlinx.coroutines.guava)
-
+    implementation(libs.androidx.scenecore)
     implementation(libs.material)
+
+    implementation("io.coil-kt:coil-compose:2.6.0") // Or the latest version of Coil
+    implementation(libs.androidx.compose.material3) // You already have this
+    implementation(libs.androidx.compose.foundation) // Ensure you have foundation if not through BOM
+    implementation("androidx.compose.ui:ui-text-google-fonts:1.8.1") // Use the latest stable version
+
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.adaptive.android)
     implementation(libs.androidx.concurrent.futures)

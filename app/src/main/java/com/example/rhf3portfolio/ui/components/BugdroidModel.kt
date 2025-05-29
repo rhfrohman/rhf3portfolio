@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.helloandroidxr.ui.components
+package com.example.rhf3portfolio.ui.components
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
@@ -27,7 +27,7 @@ import androidx.xr.compose.subspace.layout.SubspaceModifier
 import androidx.xr.compose.subspace.layout.offset
 import androidx.xr.scenecore.GltfModel
 import androidx.xr.scenecore.GltfModelEntity
-import com.example.helloandroidxr.R
+import com.example.rhf3portfolio.R
 import kotlinx.coroutines.guava.await
 import kotlinx.coroutines.launch
 import java.io.InputStream
@@ -41,9 +41,9 @@ fun BugdroidModel(showBugdroid: Boolean) {
 
         Subspace {
             val inputStream: InputStream =
-                context.resources.openRawResource(R.raw.bugdroid_animated_wave)
+                context.resources.openRawResource(R.raw.troisdances)
             Volume(
-                SubspaceModifier.offset(z = 400.dp) // Relative position
+                SubspaceModifier.offset(z = 600.dp, x = 700.dp) // Relative position
             ) { parent ->
                 scope.launch {
                     val gltfModel = GltfModel.create(
@@ -58,7 +58,7 @@ fun BugdroidModel(showBugdroid: Boolean) {
                     gltfEntity.setScale(0.1f)
                     gltfEntity.startAnimation(
                         loop = true,
-                        animationName = "Armature|Take 001|BaseLayer"
+                        //animationName = "Armature|Take 001|BaseLayer"
                     )
                 }
             }

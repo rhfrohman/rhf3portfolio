@@ -14,16 +14,25 @@
  * limitations under the License.
  */
 
-package com.example.helloandroidxr.ui.theme
+package com.example.rhf3portfolio
 
-import androidx.compose.ui.graphics.Color
-val PaneBackground = Color(0xFFFFF8F7)
-val AppContainerBackground = Color(0xFFF8EBE9)
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import com.example.rhf3portfolio.ui.Rhf3PortfolioApp
+import com.example.rhf3portfolio.ui.theme.Rhf3PortfolioTheme
 
-val Purple80 = Color(0xFFD0BCFF)
-val PurpleGrey80 = Color(0xFFCCC2DC)
-val Pink80 = Color(0xFFEFB8C8)
+class MainActivity : ComponentActivity() {
 
-val Purple40 = Color(0xFF6650a4)
-val PurpleGrey40 = Color(0xFF625b71)
-val Pink40 = Color(0xFF7D5260)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+            Rhf3PortfolioTheme {
+                Rhf3PortfolioApp()
+            }
+        }
+    }
+}
+

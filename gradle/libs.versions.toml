@@ -13,10 +13,12 @@ material = "1.12.0"
 screenshot = "0.0.1-alpha09"
 adaptiveAndroid = "1.1.0"
 kotlinAndroid = "2.1.21"
+androidx-compose-foundation = "1.8.2" # Or the desired version
 
 [libraries]
 androidx-arcore = { module = "androidx.xr.arcore:arcore", version.ref = "arcore" }
 androidx-compose = { module = "androidx.xr.compose:compose", version.ref = "compose" }
+androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation", version.ref = "androidx-compose-foundation" }
 androidx-scenecore = { module = "androidx.xr.scenecore:scenecore", version.ref = "scenecore" }
 kotlinx-coroutines-guava = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-guava", version.ref = "kotlinxCoroutinesGuava" }
 androidx-compose-material3 = { module = "androidx.compose.material3:material3" }

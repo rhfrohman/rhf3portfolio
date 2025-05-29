@@ -31,7 +31,7 @@ import androidx.compose.material3.MaterialTheme
 @Composable
 fun TextPane(text: String, modifier: Modifier = Modifier) {
     Surface(modifier = modifier.fillMaxSize()) {
-        Text(text = text, modifier = Modifier.padding(16.dp), style = MaterialTheme.typography.bodyLarge)
+        Text(text = text, modifier = Modifier.padding(16.dp), style = MaterialTheme.typography.titleLarge)
     }
 }
 
@@ -41,6 +41,6 @@ private fun MyLayOutPreview() {
     Rhf3PortfolioTheme {
         TextPane(modifier = Modifier, text = "Primary")
         // In your UI
-        Text("Test Merriweather and this is some more text", style = MaterialTheme.typography.bodyLarge)
+        //Text("Test Merriweather and this is some more text", style = MaterialTheme.typography.bodyLarge)
     }
 }

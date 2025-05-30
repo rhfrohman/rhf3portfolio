@@ -8,6 +8,15 @@ You can learn more about my work at: [rhfrohman3.com](https://rhfrohman3.com)
 
 ## 🎥 Video Demonstration
 <img src="docs/demo.gif" alt="Jetpack Compose Samples" width="400" />
+<img src="docs/File1.png" alt="Jetpack Compose Samples" width="400" />
+<img src="docs/File2.png" alt="Jetpack Compose Samples" width="400" />
+<img src="docs/File3.png" alt="Jetpack Compose Samples" width="400" />
+<img src="docs/File4.png" alt="Jetpack Compose Samples" width="400" />
+<img src="docs/File5.png" alt="Jetpack Compose Samples" width="400" />
+
+
+
+
 [RHF3 Portfolio XR View](docs/demo.gif)
 
 **Example:**

@@ -6,7 +6,8 @@ This application is built upon the foundational "Hello Android XR" sample, exten
 
 You can learn more about my work at: [rhfrohman3.com](https://rhfrohman3.com)
 
-## 🎥 Video Demonstration
+## 📸 Screenshots / GIFs
+
 <div align="center">
   <img src="docs/File1.png" alt="Screenshot of Android XR emulator and app" width="180"/>
   &nbsp; &nbsp; &nbsp; &nbsp;
@@ -77,7 +78,7 @@ The RHF3 Portfolio app features a custom Material 3 theme defined in `app/src/ma
 -   **Typography:** Custom typography settings can be found in `Type.kt`.
 -   **Component Styling:** Specific components like the `SearchBar` (`SearchBar.kt`) have their styles customized (e.g., container colors, shape) to fit the overall design.
 
-## 📸 Screenshots / GIFs
+## 🎥 Video Demonstration
 
 [RHF3 Portfolio XR View](docs/screenshots/demo.gif)
 

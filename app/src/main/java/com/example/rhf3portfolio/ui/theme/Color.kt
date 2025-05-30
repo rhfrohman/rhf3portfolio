@@ -33,7 +33,7 @@ val OnPrimaryContainerBlue = Color(0xFF001E33) // Text/icons on PrimaryContainer
 
 // For Dark Theme (primary can be a bit desaturated/lighter than light theme's primary)
 val DarkPrimaryBlue = Color(0xFF80BFFF)   // A lighter/softer blue for dark theme
-val OnDarkPrimaryBlue = Color(0xFF003366) // Text/icons on DarkPrimaryBlue
+val OnDarkPrimaryBlue = Color(0xFF24405E) // Text/icons on DarkPrimaryBlue
 val DarkPrimaryContainerBlue = Color(0xFF004C99) // A darker container shade for dark theme
 val OnDarkPrimaryContainerBlue = Color(0xFFB3D9FF) // Text/icons on DarkPrimaryContainerBlue
 

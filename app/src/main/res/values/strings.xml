@@ -19,7 +19,7 @@
     <string name="enter_home_space_mode">enter home space mode</string>
     <string name="enter_full_space_mode">enter full space mode</string>
     <string name="primary_content">Roland III Portfolio</string>
-    <string name="block_of_content_1">Experience\n-1\n2\n3</string>
+    <string name="block_of_content_1">Projects\n1\n2\n3</string>
     <string name="block_of_content_2">Block of Content\n2</string>
     <string name="search_is_not_implemented">Searching for %s (not implemented)</string>
     <string name="search_product_name">Search Portfolio Projects</string>

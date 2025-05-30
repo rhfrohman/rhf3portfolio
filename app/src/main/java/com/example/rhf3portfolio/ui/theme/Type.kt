@@ -6,6 +6,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.googlefonts.Font // Important import for downloadable fonts
 import androidx.compose.ui.text.googlefonts.GoogleFont
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import com.example.rhf3portfolio.R // Adjust to your R class import
 
@@ -30,7 +31,6 @@ val merriweatherFontFamily = FontFamily(
     // Font(googleFont = GoogleFont("Merriweather"), fontProvider = provider, weight = FontWeight.Light), // Weight 300
     // Font(googleFont = GoogleFont("Merriweather"), fontProvider = provider, weight = FontWeight.Medium), // Weight 500
 )
-
 // Replace your existing Typography
 val Typography1 = Typography(
     displayLarge = TextStyle(
@@ -66,7 +66,7 @@ val Typography1 = Typography(
         fontWeight = FontWeight.Normal,
         fontSize = 28.sp,
         lineHeight = 36.sp,
-        letterSpacing = 0.sp
+        letterSpacing = (-2).sp
     ),
     headlineSmall = TextStyle(
         fontFamily = merriweatherFontFamily,

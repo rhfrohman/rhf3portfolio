@@ -89,6 +89,7 @@ import com.example.rhf3portfolio.ui.components.SearchBar
 import com.example.rhf3portfolio.ui.theme.Rhf3PortfolioTheme
 import com.example.rhf3portfolio.ui.components.BulletList // Assuming this is your bullet list component
 import com.example.rhf3portfolio.CarouselItem
+import com.example.rhf3portfolio.ui.components.ContactButtons
 import com.example.rhf3portfolio.ui.components.ImageVideoCarousel
 import kotlinx.coroutines.launch
 
@@ -339,7 +340,7 @@ private fun PrimaryContent(modifier: Modifier = Modifier) {
 
             Text(
                 text = "Innovative Designer & Creative Thinker",
-                style = MaterialTheme.typography.titleLarge,
+                style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Black),
                 modifier = Modifier.padding(bottom = 16.dp)
             )
 
@@ -348,42 +349,6 @@ private fun PrimaryContent(modifier: Modifier = Modifier) {
                 style = MaterialTheme.typography.bodyLarge,
                 modifier = Modifier.padding(bottom = 16.dp)
             )
-
-            // Contact Information Section
-            Text(
-                text = "Contact Information",
-                style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Black),
-                modifier = Modifier.padding(top = 16.dp, bottom = 8.dp)
-            )
-            Text(
-                text = "Email: rhfrohman@gmail.com",
-                style = MaterialTheme.typography.bodyMedium,
-                modifier = Modifier.padding(bottom = 4.dp)
-            )
-            Text(
-                text = "LinkedIn: linkedin.com/in/rhfrohman3", // Replace with actual LinkedIn
-                style = MaterialTheme.typography.bodyMedium,
-                modifier = Modifier.padding(bottom = 16.dp)
-            )
-
-            // Schedule Button
-            Button(
-                onClick = {
-                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(googleMeetsLink))
-                    try {
-                        context.startActivity(intent)
-                    } catch (e: Exception) {
-                        // Handle case where no browser is available or link is invalid
-                        // You might want to show a Toast message here
-                        println("Could not open link: $e")
-                    }
-                },
-                modifier = Modifier
-                    .fillMaxWidth(0.8f) // Button takes 80% of width
-                    .padding(vertical = 16.dp)
-            ) {
-                Text("Let's Connect!")
-            }
 
             // --- Bullet Points Section ---
             Text(
@@ -401,6 +366,49 @@ private fun PrimaryContent(modifier: Modifier = Modifier) {
             // --- End Bullet Points Section ---
 
             Spacer(modifier = Modifier.height(32.dp)) // Extra space at the bottom
+
+            // Contact Information Section
+            Text(
+                text = "Contact Information",
+                style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Black),
+                modifier = Modifier.padding(top = 16.dp, bottom = 8.dp)
+            )
+            ContactButtons()
+/*            Text(
+                text = "Email: rhfrohman@gmail.com",
+                style = MaterialTheme.typography.bodyMedium,
+                modifier = Modifier.padding(bottom = 4.dp)
+            )
+            Text(
+                text = "LinkedIn: linkedin.com/in/rhfrohman3", // Replace with actual LinkedIn
+                style = MaterialTheme.typography.bodyMedium,
+                modifier = Modifier.padding(bottom = 16.dp)
+            )*/
+
+            // Schedule Button
+            Button(
+                onClick = {
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(googleMeetsLink))
+                    try {
+                        context.startActivity(intent)
+                    } catch (e: Exception) {
+                        // Handle case where no browser is available or link is invalid
+                        // You might want to show a Toast message here
+                        println("Could not open link: $e")
+                    }
+                },
+                modifier = Modifier
+                    .fillMaxWidth(0.8f) // Button takes 80% of width
+                    .padding(vertical = 16.dp) // Existing padding
+                    .height(56.dp) // Increase the height of the button
+            ) {
+                Text(
+                    text = "Let's Connect!",
+                    style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold)
+                    )
+            }
+
+
         }
     }
 

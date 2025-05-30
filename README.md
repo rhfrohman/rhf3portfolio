@@ -7,7 +7,7 @@ This application is built upon the foundational "Hello Android XR" sample, exten
 You can learn more about my work at: [rhfrohman3.com](https://rhfrohman3.com)
 
 ## 🎥 Video Demonstration
-<img src="docs/demo.gif" alt="Jetpack Compose Samples" width="824" />
+<img src="docs/demo.gif" alt="Jetpack Compose Samples" width="400" />
 [RHF3 Portfolio XR View](docs/demo.gif)
 
 **Example:**

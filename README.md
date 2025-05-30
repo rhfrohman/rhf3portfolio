@@ -8,7 +8,7 @@ You can learn more about my work at: [rhfrohman3.com](https://rhfrohman3.com)
 
 ## 🎥 Video Demonstration
 
-*(Link to a short video showcasing the app's features and user experience, especially the XR interactions. Platforms like YouTube or Vimeo are ideal for hosting.)*
+[RHF3 Portfolio XR View](docs/screenshots/demo.gif)
 
 **Example:**
 <!-- [Watch the RHF3 Portfolio App in Action!](https://www.youtube.com/watch?v=your_video_id) -->
@@ -65,10 +65,10 @@ The RHF3 Portfolio app features a custom Material 3 theme defined in `app/src/ma
 
 ## 📸 Screenshots / GIFs
 
-*(Add gifs/screens.)*
+[RHF3 Portfolio XR View](docs/screenshots/demo.gif)
 
 **Example:**
-<!-- ![RHF3 Portfolio XR View](docs/screenshots/rhf3_portfolio_xr.png) -->
+<!-- ![RHF3 Portfolio XR View](docs/screenshots/demo.gif) -->
 <!-- *Roland Frohman III's portfolio viewed in an Android XR environment.* -->
 
 ## 📚 Additional Android XR Resources

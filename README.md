@@ -7,12 +7,17 @@ This application is built upon the foundational "Hello Android XR" sample, exten
 You can learn more about my work at: [rhfrohman3.com](https://rhfrohman3.com)
 
 ## 🎥 Video Demonstration
-<img src="docs/demo.gif" alt="Jetpack Compose Samples" width="400" />
-<img src="docs/File1.png" alt="Jetpack Compose Samples" width="400" />
-<img src="docs/File2.png" alt="Jetpack Compose Samples" width="400" />
-<img src="docs/File3.png" alt="Jetpack Compose Samples" width="400" />
-<img src="docs/File4.png" alt="Jetpack Compose Samples" width="400" />
-<img src="docs/File5.png" alt="Jetpack Compose Samples" width="400" />
+<div align="center">
+  <img src="images/File1.png" alt="Screenshot of File 1" width="180"/>
+  &nbsp; &nbsp; &nbsp; &nbsp;
+  <img src="images/File2.png" alt="Screenshot of File 2" width="180"/>
+  &nbsp; &nbsp; &nbsp; &nbsp;
+  <img src="images/File3.png" alt="Screenshot of File 3" width="180"/>
+  &nbsp; &nbsp; &nbsp; &nbsp;
+  <img src="images/File4.png" alt="Screenshot of File 4" width="180"/>
+  &nbsp; &nbsp; &nbsp; &nbsp;
+  <img src="images/File5.png" alt="Screenshot of File 5" width="180"/>
+</div>
 
 
 

@@ -29,7 +29,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            Rhf3PortfolioTheme {
+            Rhf3PortfolioTheme(dynamicColor = false) {
                 Rhf3PortfolioApp()
             }
         }

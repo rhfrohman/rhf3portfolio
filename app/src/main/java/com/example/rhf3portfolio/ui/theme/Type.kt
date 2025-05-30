@@ -21,7 +21,9 @@ val merriweatherFontName = GoogleFont("Merriweather")
 
 val merriweatherFontFamily = FontFamily(
     Font(googleFont = merriweatherFontName, fontProvider = provider), // Regular
-    Font(googleFont = merriweatherFontName, fontProvider = provider, weight = FontWeight.Bold) // Bold example
+    Font(googleFont = merriweatherFontName, fontProvider = provider, weight = FontWeight.Bold), // Bold example
+    Font(googleFont = merriweatherFontName, fontProvider = provider, weight = FontWeight.ExtraBold), // Weight 300
+
     // Add other weights and styles (italic) as needed by creating more Font() entries
     // e.g., Font(googleFont = GoogleFont("Merriweather Italic"), fontProvider = provider, style = FontStyle.Italic)
     // or for specific weights:
@@ -47,10 +49,10 @@ val Typography1 = Typography(
     ),
     displaySmall = TextStyle(
         fontFamily = merriweatherFontFamily,
-        fontWeight = FontWeight.Normal,
+        fontWeight = FontWeight.Black,
         fontSize = 36.sp,
         lineHeight = 44.sp,
-        letterSpacing = 0.sp
+        letterSpacing = (-2).sp
     ),
     headlineLarge = TextStyle(
         fontFamily = merriweatherFontFamily,
@@ -75,7 +77,7 @@ val Typography1 = Typography(
     ),
     titleLarge = TextStyle(
         fontFamily = merriweatherFontFamily,
-        fontWeight = FontWeight.Bold, // Titles are often bold
+        fontWeight = FontWeight.ExtraBold, // Titles are often bold
         fontSize = 22.sp,
         lineHeight = 28.sp,
         letterSpacing = 0.sp

@@ -35,5 +35,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Hello Android XR"
+rootProject.name = "RHF3 Portfolio"
 include(":app")

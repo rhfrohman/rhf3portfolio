@@ -4,7 +4,7 @@ Welcome to the RHF3 Portfolio app! This Android Studio project is a dynamic and 
 
 This application is built upon the foundational "Hello Android XR" sample, extending it to create a personalized portfolio experience.
 
-You can learn more about Roland Frohman III at his website: [rhfrohman3.com](https://rhfrohman3.com)
+You can learn more about my work at: [rhfrohman3.com](https://rhfrohman3.com)
 
 ## 🎥 Video Demonstration
 

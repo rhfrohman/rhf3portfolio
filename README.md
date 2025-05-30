@@ -8,7 +8,7 @@ You can learn more about my work at: [rhfrohman3.com](https://rhfrohman3.com)
 
 ## 🎥 Video Demonstration
 
-[RHF3 Portfolio XR View](docs/screenshots/demo.gif)
+[RHF3 Portfolio XR View](docs/demo.gif)
 
 **Example:**
 <!-- [Watch the RHF3 Portfolio App in Action!](https://www.youtube.com/watch?v=your_video_id) -->

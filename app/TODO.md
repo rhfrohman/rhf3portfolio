@@ -94,5 +94,12 @@ This section brainstorms features to best leverage XR for showcasing design work
 
 ## 💡 Future Ideas / Wishlist
 -   [ ] *(Less defined ideas or long-term goals)*
--   [ ] Addition of chatbot AI, the wizard Herm the 3rd
--   [ ] Integration with a live feed (e.g., Dribbble, Behance), text generation of headlines of topics I'm interested in - *Technically complex, consider carefully.*
+-   [ ] **Chatbot AI - "Herm the 3rd"**:
+    -   Acts as an interactive guide or FAQ for the portfolio.
+    -   Could answer questions about projects, Roland's skills, or even tell a joke.
+    -   Potential for using a simple NLP model or predefined Q&A.
+-   [ ] **Live Feed Integration & Generative Headlines**:
+    -   Fetch recent design work/articles from Dribbble, Behance, or design blogs via APIs.
+    -   Use a simple text generation model (or even predefined templates) to create "XR-themed" headlines for these fetched items, making it seem like content curated for the viewer's interests within the app.
+-   [ ] **Spatial Audio Navigation Cues**:
+    -   Incorporate subtle spatial audio cues that guide the user towards interactive elements or different sections of the portfolio. For example, a faint "whoosh" sound could emanate from the direction of the next project in a gallery, or a soft "chime" when looking at a selectable item. This would enhance immersion and intuitiveness, especially for users new to XR environments.

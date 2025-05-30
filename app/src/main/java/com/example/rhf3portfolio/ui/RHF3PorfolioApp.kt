@@ -337,25 +337,50 @@ private fun PrimaryContent(modifier: Modifier = Modifier) {
                     .padding(bottom = 16.dp),
                 contentScale = ContentScale.Fit
             )
+            Row (verticalAlignment = Alignment.CenterVertically) {
+                Image(
+                    painter = painterResource(id = R.drawable.wizard_hat),
+                    contentDescription = "wizard_hat", // CORRECTED: Separate parameter
+                    modifier = Modifier
+                        .height(40.dp) // Adjusted height for better visual balance
+                        .width(40.dp)  // Adjusted width for better visual balance
+                        .padding(end = 8.dp), // Add some spacing between image and text
+                    contentScale = ContentScale.Fit
 
-            Text(
-                text = "Innovative Designer & Creative Thinker",
-                style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Black),
-                modifier = Modifier.padding(bottom = 16.dp)
-            )
+                    //contentScale = ContentScale.Fit
+                )
+                Text(
+                    text = "Innovative Designer & Creative Thinker",
+                    style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Black),
+                    modifier = Modifier.padding(bottom = 8.dp, top = 8.dp)
+                )
+            }
 
             Text(
                 text = "Welcome to my portfolio! I specialize in crafting intuitive and engaging digital experiences. With a passion for user-centered design, I transform complex problems into elegant solutions.",
                 style = MaterialTheme.typography.bodyLarge,
-                modifier = Modifier.padding(bottom = 16.dp)
+                modifier = Modifier.padding(bottom = 30.dp, top = 8.dp)
             )
 
             // --- Bullet Points Section ---
-            Text(
-                text = "Key Skills & Expertise",
-                style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Black),
-                modifier = Modifier.padding(top = 24.dp, bottom = 8.dp)
-            )
+            Row (verticalAlignment = Alignment.CenterVertically) {
+                Image(
+                    painter = painterResource(id = R.drawable.plugin),
+                    contentDescription = "plugin", // CORRECTED: Separate parameter
+                    modifier = Modifier
+                        .height(40.dp) // Adjusted height for better visual balance
+                        .width(40.dp)  // Adjusted width for better visual balance
+                        .padding(end = 2.dp), // Add some spacing between image and text
+                    contentScale = ContentScale.Fit
+
+                    //contentScale = ContentScale.Fit
+                )
+                Text(
+                    text = "Key Skills & Expertise",
+                    style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Black),
+                    modifier = Modifier.padding(top = 8.dp, bottom = 8.dp)
+                )
+            }
 
             // Use your BulletList composable
             BulletList(
@@ -368,11 +393,24 @@ private fun PrimaryContent(modifier: Modifier = Modifier) {
             Spacer(modifier = Modifier.height(32.dp)) // Extra space at the bottom
 
             // Contact Information Section
+            Row (verticalAlignment = Alignment.CenterVertically){
+                Image(
+                    painter = painterResource(id = R.drawable.mobile),
+                    contentDescription = "mobile", // CORRECTED: Separate parameter
+                    modifier = Modifier
+                        .height(40.dp) // Adjusted height for better visual balance
+                        .width(40.dp),  // Adjusted width for better visual balance
+                       // .padding(end = 2.dp), // Add some spacing between image and text
+                    contentScale = ContentScale.Fit
+
+                    //contentScale = ContentScale.Fit
+                )
             Text(
                 text = "Contact Information",
                 style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Black),
-                modifier = Modifier.padding(top = 16.dp, bottom = 8.dp)
+                modifier = Modifier.padding(top = 8.dp, bottom = 8.dp)
             )
+            }
             ContactButtons()
 /*            Text(
                 text = "Email: rhfrohman@gmail.com",

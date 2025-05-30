@@ -16,10 +16,12 @@
 
 package com.example.rhf3portfolio.ui
 
+import android.content.Intent
 import android.net.Uri
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.tween
+import androidx.compose.foundation.Image // <-- THIS IS THE REQUIRED IMPORT
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -53,8 +55,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.window.core.layout.WindowSizeClass
@@ -81,6 +87,7 @@ import com.example.rhf3portfolio.ui.components.BugdroidModel
 import com.example.rhf3portfolio.ui.components.EnvironmentControls
 import com.example.rhf3portfolio.ui.components.SearchBar
 import com.example.rhf3portfolio.ui.theme.Rhf3PortfolioTheme
+import com.example.rhf3portfolio.ui.components.BulletList // Assuming this is your bullet list component
 import com.example.rhf3portfolio.CarouselItem
 import com.example.rhf3portfolio.ui.components.ImageVideoCarousel
 import kotlinx.coroutines.launch
@@ -213,12 +220,12 @@ private fun SideBySidePaneLayout(
                 .clip(RoundedCornerShape(16.dp))
         ) {
             Column {
-                secondaryPane()
+                primaryPane()
             }
         }
         Spacer(Modifier.width(16.dp))
         Surface(modifier.clip(RoundedCornerShape(16.dp))) {
-            primaryPane()
+            secondaryPane()
         }
     }
 }
@@ -233,7 +240,7 @@ private fun TopAndBottomPaneLayout(
     modifier: Modifier = Modifier
 ) {
     Column(modifier.verticalScroll(rememberScrollState())) {
-        Surface(Modifier.requiredHeight(500.dp)) {
+        Surface(Modifier.requiredHeight(800.dp)) {
             primaryPane()
         }
         Spacer(Modifier.height(16.dp))
@@ -280,6 +287,14 @@ private fun TopAppBar() {
     }
 }
 
+val rolandsKeySkills = listOf(
+    "User Experience (UX) Design",
+    "User Interface (UI) Design",
+    "Prototyping & Wireframing (Figma, Adobe XD)",
+    "Interaction Design",
+    "Design Systems",
+    "User Research & Usability Testing"
+)
 @Composable
 private fun PrimaryContent(modifier: Modifier = Modifier) {
     var showBugdroid by rememberSaveable { mutableStateOf(false) }
@@ -302,12 +317,95 @@ private fun PrimaryContent(modifier: Modifier = Modifier) {
             }
         }
     } else {
-        TextPane(
-            text = stringResource(R.string.primary_content),
-            modifier = modifier.clip(RoundedCornerShape(16.dp))
-        )
+        val context = LocalContext.current
+        val googleMeetsLink = "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3Uln4JWZY-HMfhKXF9PKKBqJPfUPsXl8YB5mTR7ZbsKUCKf2VWYf1xKAoQzVwOU9AWX9qI03Xy" // ** IMPORTANT: Replace this **
+
+        Column(
+            modifier = modifier
+                .fillMaxSize()
+                .verticalScroll(rememberScrollState()) // Make the content scrollable
+                .padding(16.dp),
+            horizontalAlignment = Alignment.CenterHorizontally // Center the button
+        ) {
+            Image(
+                painter = painterResource(id = R.drawable.color_logo),
+                contentDescription = "Logo", // CORRECTED: Separate parameter
+                modifier = Modifier
+                    .fillMaxWidth(1.0f)
+                    .height(IntrinsicSize.Min) // Or a fixed Dp value like 100.dp
+                    .padding(bottom = 16.dp),
+                contentScale = ContentScale.Fit
+            )
+
+            Text(
+                text = "Innovative Designer & Creative Thinker",
+                style = MaterialTheme.typography.titleLarge,
+                modifier = Modifier.padding(bottom = 16.dp)
+            )
+
+            Text(
+                text = "Welcome to my portfolio! I specialize in crafting intuitive and engaging digital experiences. With a passion for user-centered design, I transform complex problems into elegant solutions.",
+                style = MaterialTheme.typography.bodyLarge,
+                modifier = Modifier.padding(bottom = 16.dp)
+            )
+
+            // Contact Information Section
+            Text(
+                text = "Contact Information",
+                style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Black),
+                modifier = Modifier.padding(top = 16.dp, bottom = 8.dp)
+            )
+            Text(
+                text = "Email: rhfrohman@gmail.com",
+                style = MaterialTheme.typography.bodyMedium,
+                modifier = Modifier.padding(bottom = 4.dp)
+            )
+            Text(
+                text = "LinkedIn: linkedin.com/in/rhfrohman3", // Replace with actual LinkedIn
+                style = MaterialTheme.typography.bodyMedium,
+                modifier = Modifier.padding(bottom = 16.dp)
+            )
+
+            // Schedule Button
+            Button(
+                onClick = {
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(googleMeetsLink))
+                    try {
+                        context.startActivity(intent)
+                    } catch (e: Exception) {
+                        // Handle case where no browser is available or link is invalid
+                        // You might want to show a Toast message here
+                        println("Could not open link: $e")
+                    }
+                },
+                modifier = Modifier
+                    .fillMaxWidth(0.8f) // Button takes 80% of width
+                    .padding(vertical = 16.dp)
+            ) {
+                Text("Let's Connect!")
+            }
+
+            // --- Bullet Points Section ---
+            Text(
+                text = "Key Skills & Expertise",
+                style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Black),
+                modifier = Modifier.padding(top = 24.dp, bottom = 8.dp)
+            )
+
+            // Use your BulletList composable
+            BulletList(
+                items = rolandsKeySkills,
+                itemStyle = MaterialTheme.typography.bodyLarge, // Customize style if needed
+                modifier = Modifier.fillMaxWidth() // Let the list take available width
+            )
+            // --- End Bullet Points Section ---
+
+            Spacer(modifier = Modifier.height(32.dp)) // Extra space at the bottom
+        }
     }
+
 }
+
 
 @Composable
 private fun BlockOfContentOne(modifier: Modifier = Modifier) {
@@ -323,11 +421,12 @@ private fun BlockOfContentTwo(modifier: Modifier = Modifier) {
     // You can define com.example.helloandroidxr.carouselItems here or pass it from a ViewModel/higher composable
     val items = remember { // Remember the list to avoid recreation on recomposition
         listOf(
-            CarouselItem.Image("https://picsum.photos/seed/page1/600/400"),
+            //CarouselItem.Image("https://picsum.photos/seed/page1/600/400"),
             // Make sure your package name is correct and the video file exists in res/raw
             CarouselItem.Video(Uri.parse("android.resource://com.example.rhf3portfolio/" + R.raw.herm)),
-            CarouselItem.Image("https://picsum.photos/seed/page2/600/400"),
-            CarouselItem.Image("https://picsum.photos/seed/page3/600/400")
+            CarouselItem.Video(Uri.parse("android.resource://com.example.rhf3portfolio/" + R.raw.air420ui)),
+            //CarouselItem.Image("https://picsum.photos/seed/page2/600/400"),
+            //CarouselItem.Image("https://picsum.photos/seed/page3/600/400")
         )
     }
 
